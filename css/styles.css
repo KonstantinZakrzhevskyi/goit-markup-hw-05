@@ -16,6 +16,8 @@
   --footer-social-icons-bg-color: rgba(255, 255, 255, 0.1);
   --backdrop-bg: rgba(0, 0, 0, 0.2);
   --actions-bg: rgba(33, 150, 243, 0.9);
+  --duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 html {
   box-sizing: border-box;
@@ -129,6 +131,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: color var(--duration) var(--timing-function);
 }
 
 .site-nav .link.current {
@@ -152,11 +155,6 @@ img {
 }
 
 .current::after {
-  opacity: 1;
-}
-
-.site-nav-link:hover::after,
-.site-nav-link:focus::after {
   opacity: 1;
 }
 
@@ -185,6 +183,7 @@ img {
 .contacts-link {
   display: flex;
   align-items: center;
+  transition: color var(--duration) var(--timing-function);
 }
 
 /* hero */
@@ -316,6 +315,7 @@ img {
   height: 70px;
   background-color: rgba(47, 48, 58, 0.8);
   opacity: 0;
+  transition: opasity var(--duration) var(--timing-function);
 }
 .work-subtitle {
   margin-bottom: 0;
