@@ -620,10 +620,12 @@ img {
 
 .project-thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .project-thumb::before {
   display: inline-block;
+  position: absolute;
   content: '';
   width: 100%;
   height: 100%;
@@ -636,17 +638,26 @@ img {
   opacity: 1;
 }
 
+.card-image {
+  position: relative;
+}
+
 .card-action {
   position: absolute;
   bottom: 0;
   padding: 63px 24px;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   background-color: var(--actions-bg);
+  transform: translateY(100%);
+  transition: transform var(--duration) var(--timing-function);
 }
 
 .project-card:hover .card-action,
 .project-card:focus .card-action {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .card-action-text {
